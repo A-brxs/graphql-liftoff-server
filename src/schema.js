@@ -15,7 +15,9 @@ const typeDefs = gql`
     "Thumbnail"
     thumbnail: String
     "Total length of all modules"
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
+    "The track's full duration, in seconds"
+    durationInSeconds: Int
     "How many modules there are"
     modulesCount: Int
     "The track's complete description, can be in Markdown format"
@@ -43,7 +45,9 @@ const typeDefs = gql`
     "The Module's title"
     title: String!
     "The Module's length in minutes"
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
+    "The module's video duration, in seconds"
+    durationInSeconds: Int
   }
 
   type Query {
